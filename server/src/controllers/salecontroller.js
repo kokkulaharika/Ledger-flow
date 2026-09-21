@@ -157,3 +157,205 @@ export const getSaleById = async (req, res) => {
     });
   }
 };
+
+
+// Update Sale
+export const updateSale = async (req, res) => {
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+
+    const { id } = req.params;
+    const { customerName, products } = req.body;
+
+    // Validate input
+    if (!customerName || !products || products.length === 0) {
+      await session.abortTransaction();
+
+      return res.status(400).json({
+        success: false,
+        message: "Customer name and products are required.",
+      });
+    }
+
+    // Find existing sale belonging to logged-in user
+    const existingSale = await Sale.findOne({
+      _id: id,
+      createdBy: req.user._id,
+    }).session(session);
+
+    if (!existingSale) {
+      await session.abortTransaction();
+
+      return res.status(404).json({
+        success: false,
+        message: "Sale not found.",
+      });
+    }
+
+    // Restore stock from old sale
+    for (const oldItem of existingSale.products) {
+      const product = await Product.findOne({
+        _id: oldItem.product,
+        createdBy: req.user._id,
+      }).session(session);
+
+      if (product) {
+        product.quantity += oldItem.quantity;
+        await product.save({ session });
+      }
+    }
+
+    // Calculate new sale
+    let totalAmount = 0;
+    const updatedProducts = [];
+
+    for (const item of products) {
+      const product = await Product.findOne({
+        _id: item.product,
+        createdBy: req.user._id,
+      }).session(session);
+
+      if (!product) {
+        await session.abortTransaction();
+
+        return res.status(404).json({
+          success: false,
+          message: `Product not found: ${item.product}`,
+        });
+      }
+
+      if (!item.quantity || item.quantity <= 0) {
+        await session.abortTransaction();
+
+        return res.status(400).json({
+          success: false,
+          message: `Quantity must be greater than 0 for ${product.name}`,
+        });
+      }
+
+      // Check available stock
+      if (product.quantity < item.quantity) {
+        await session.abortTransaction();
+
+        return res.status(400).json({
+          success: false,
+          message: `Insufficient stock for ${product.name}`,
+        });
+      }
+
+      const subtotal = product.price * item.quantity;
+
+      totalAmount += subtotal;
+
+      updatedProducts.push({
+        product: product._id,
+        quantity: item.quantity,
+        price: product.price,
+        subtotal,
+      });
+
+      // Reduce stock
+      product.quantity -= item.quantity;
+
+      await product.save({ session });
+    }
+
+    // Update sale
+    existingSale.customerName = customerName;
+    existingSale.products = updatedProducts;
+    existingSale.totalAmount = totalAmount;
+
+    await existingSale.save({ session });
+
+    // Commit transaction
+    await session.commitTransaction();
+
+    return res.status(200).json({
+      success: true,
+      message: "Sale updated successfully.",
+      sale: existingSale,
+    });
+
+  } catch (error) {
+    await session.abortTransaction();
+
+    return res.status(500).json({
+      success: false,
+      message: "Failed to update sale. Transaction rolled back.",
+      error: error.message,
+    });
+
+  } finally {
+    session.endSession();
+  }
+};
+
+
+
+// Delete Sale
+export const deleteSale = async (req, res) => {
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+
+    const { id } = req.params;
+
+    // Find sale belonging to logged-in user
+    const sale = await Sale.findOne({
+      _id: id,
+      createdBy: req.user._id,
+    }).session(session);
+
+    if (!sale) {
+      await session.abortTransaction();
+
+      return res.status(404).json({
+        success: false,
+        message: "Sale not found.",
+      });
+    }
+
+    // Restore stock from the sale
+    for (const item of sale.products) {
+      const product = await Product.findOne({
+        _id: item.product,
+        createdBy: req.user._id,
+      }).session(session);
+
+      if (product) {
+        product.quantity += item.quantity;
+        await product.save({ session });
+      }
+    }
+
+    // Delete sale
+    await Sale.deleteOne({
+      _id: id,
+      createdBy: req.user._id,
+    }).session(session);
+
+    // Commit transaction
+    await session.commitTransaction();
+
+    return res.status(200).json({
+      success: true,
+      message: "Sale deleted successfully and stock restored.",
+    });
+
+  } catch (error) {
+    await session.abortTransaction();
+
+    return res.status(500).json({
+      success: false,
+      message: "Failed to delete sale. Transaction rolled back.",
+      error: error.message,
+    });
+
+  } finally {
+    session.endSession();
+  }
+};
+

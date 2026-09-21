@@ -56,3 +56,84 @@ export const getSuppliers = async (req, res) => {
     });
   }
 };
+
+// Update Supplier
+export const updateSupplier = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, phone, email, address } = req.body;
+
+    if (!name || !phone) {
+      return res.status(400).json({
+        success: false,
+        message: "Supplier name and phone are required.",
+      });
+    }
+
+    const supplier = await Supplier.findOneAndUpdate(
+      {
+        _id: id,
+        createdBy: req.user._id,
+      },
+      {
+        name,
+        phone,
+        email,
+        address,
+      },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!supplier) {
+      return res.status(404).json({
+        success: false,
+        message: "Supplier not found.",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Supplier updated successfully.",
+      supplier,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Failed to update supplier.",
+      error: error.message,
+    });
+  }
+};
+
+// Delete Supplier
+export const deleteSupplier = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const supplier = await Supplier.findOneAndDelete({
+      _id: id,
+      createdBy: req.user._id,
+    });
+
+    if (!supplier) {
+      return res.status(404).json({
+        success: false,
+        message: "Supplier not found.",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Supplier deleted successfully.",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Failed to delete supplier.",
+      error: error.message,
+    });
+  }
+};

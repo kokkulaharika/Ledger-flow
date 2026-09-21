@@ -1,0 +1,1057 @@
+/* =========================================================
+   SETTINGS PAGE
+   ========================================================= */
+
+.settings-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f6f7fb;
+  color: #202534;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.settings-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e8eaf0;
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: 20;
+}
+
+
+/* Brand */
+
+.settings-brand {
+  height: 78px;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  color: #202534;
+
+  border-bottom: 1px solid #eef0f4;
+
+  flex-shrink: 0;
+}
+
+.settings-brand-icon {
+  width: 39px;
+  height: 39px;
+
+  border-radius: 10px;
+
+  background: #34469a;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 4px 10px rgba(52, 70, 154, 0.18);
+}
+
+.settings-brand span {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+
+/* Navigation */
+
+.settings-navigation {
+  padding: 18px 13px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  overflow-y: auto;
+}
+
+.settings-nav-item {
+  width: 100%;
+  min-height: 44px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #70798a;
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-nav-item i {
+  width: 18px;
+  min-width: 18px;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.settings-nav-item:hover {
+  background: #f4f5f9;
+  color: #34469a;
+}
+
+.settings-nav-item:active {
+  transform: scale(0.98);
+}
+
+.settings-nav-item.active {
+  background: #eef0fb;
+  color: #34469a;
+  font-weight: 600;
+}
+
+
+/* Sidebar bottom */
+
+.settings-sidebar-bottom {
+  margin-top: auto;
+
+  padding: 13px;
+
+  border-top: 1px solid #eef0f4;
+
+  flex-shrink: 0;
+}
+
+.logout-item:hover {
+  background: #faf1f1;
+  color: #a04d4d;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.settings-main {
+  width: calc(100% - 250px);
+
+  margin-left: 250px;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.settings-header {
+  min-height: 125px;
+
+  padding: 28px 38px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e8eaf0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  box-sizing: border-box;
+}
+
+.settings-page-label {
+  margin: 0 0 5px;
+
+  color: #8b93a3;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.settings-header h1 {
+  margin: 0;
+
+  color: #202534;
+
+  font-size: 27px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.settings-header-description {
+  margin: 7px 0 0;
+
+  color: #7b8495;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.settings-header-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  border-radius: 12px;
+
+  background: #eef0fb;
+  color: #34469a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.settings-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 30px 38px 50px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.settings-panel {
+  background: #ffffff;
+
+  border: 1px solid #e8eaf0;
+
+  border-radius: 14px;
+
+  margin-bottom: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 8px rgba(28, 35, 55, 0.025);
+}
+
+.settings-panel:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.settings-panel-header {
+  min-height: 82px;
+
+  padding: 19px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #f0f1f4;
+
+  box-sizing: border-box;
+}
+
+.settings-panel-header h2 {
+  margin: 0;
+
+  color: #252b3a;
+
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.settings-panel-header p {
+  margin: 5px 0 0;
+
+  color: #8a92a1;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.settings-panel-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  border-radius: 10px;
+
+  background: #f1f3f9;
+  color: #34469a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+}
+
+.security-icon {
+  background: #eef5f1;
+  color: #2d7657;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.settings-form {
+  padding: 24px 22px;
+}
+
+.settings-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   FIELDS
+   ========================================================= */
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.settings-field label {
+  color: #596273;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.settings-field small {
+  color: #9299a7;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* Input wrapper */
+
+.settings-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.settings-input-wrapper > i {
+  position: absolute;
+
+  left: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #9299a7;
+
+  font-size: 12px;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* Inputs */
+
+.settings-input-wrapper input,
+.settings-input-wrapper select {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 40px;
+
+  border: 1px solid #dfe2e9;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #303646;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.settings-input-wrapper input::placeholder {
+  color: #b0b6c1;
+}
+
+.settings-input-wrapper input:hover,
+.settings-input-wrapper select:hover {
+  border-color: #cbd0da;
+}
+
+.settings-input-wrapper input:focus,
+.settings-input-wrapper select:focus {
+  border-color: #34469a;
+
+  box-shadow:
+    0 0 0 3px rgba(52, 70, 154, 0.08);
+}
+
+
+/* Select */
+
+.settings-input-wrapper select {
+  appearance: none;
+
+  cursor: pointer;
+
+  padding-right: 38px;
+}
+
+.select-wrapper::after {
+  content: "\f078";
+
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+
+  color: #8b93a3;
+
+  font-size: 10px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.password-toggle {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8b93a3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.password-toggle:hover {
+  background: #f2f3f7;
+  color: #34469a;
+}
+
+.password-toggle i {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.settings-form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 22px;
+  padding-top: 18px;
+
+  border-top: 1px solid #f0f1f4;
+}
+
+.settings-primary-btn {
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #34469a;
+
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-primary-btn:hover:not(:disabled) {
+  background: #293a86;
+
+  box-shadow:
+    0 4px 12px rgba(52, 70, 154, 0.18);
+}
+
+.settings-primary-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.settings-primary-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.settings-message {
+  margin-top: 18px;
+
+  min-height: 40px;
+
+  padding: 10px 13px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  box-sizing: border-box;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.settings-message i {
+  font-size: 13px;
+}
+
+.success-message {
+  background: #edf7f1;
+
+  border: 1px solid #d4ebdd;
+
+  color: #287052;
+}
+
+.error-message {
+  background: #fbefef;
+
+  border: 1px solid #f0d8d8;
+
+  color: #a04d4d;
+}
+
+
+/* =========================================================
+   BUSINESS INFORMATION NOTE
+   ========================================================= */
+
+.business-info-note {
+  margin-top: 20px;
+
+  padding: 11px 13px;
+
+  border-radius: 8px;
+
+  background: #f7f8fb;
+
+  border: 1px solid #e9ebf0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #7d8696;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.business-info-note i {
+  margin-top: 1px;
+
+  color: #34469a;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PASSWORD FORM
+   ========================================================= */
+
+.password-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   SECURITY WARNING
+   ========================================================= */
+
+.security-warning {
+  margin-top: 21px;
+
+  padding: 13px 15px;
+
+  background: #f4f7fb;
+
+  border: 1px solid #e3e8f0;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+.security-warning > i {
+  color: #34469a;
+
+  font-size: 15px;
+
+  margin-top: 2px;
+}
+
+.security-warning strong {
+  display: block;
+
+  color: #404858;
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  margin-bottom: 3px;
+}
+
+.security-warning p {
+  margin: 0;
+
+  color: #838b99;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.settings-loading {
+  min-height: 100vh;
+
+  background: #f6f7fb;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-loading i {
+  color: #34469a;
+
+  font-size: 25px;
+
+  margin-bottom: 12px;
+}
+
+.settings-loading p {
+  margin: 0;
+
+  color: #7d8696;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.settings-navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+.settings-navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.settings-navigation::-webkit-scrollbar-thumb {
+  background: #dfe2e8;
+
+  border-radius: 10px;
+}
+
+.settings-navigation::-webkit-scrollbar-thumb:hover {
+  background: #c8ccd5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .settings-sidebar {
+    width: 70px;
+  }
+
+  .settings-brand {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .settings-brand span,
+  .settings-nav-item span {
+    display: none;
+  }
+
+  .settings-nav-item {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .settings-main {
+    width: calc(100% - 70px);
+
+    margin-left: 70px;
+  }
+
+  .settings-content {
+    padding: 25px;
+  }
+
+  .settings-header {
+    padding: 25px;
+  }
+
+  .password-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .settings-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-content {
+    padding: 20px;
+  }
+
+  .settings-header {
+    padding: 22px 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .settings-sidebar {
+    width: 58px;
+  }
+
+  .settings-brand {
+    height: 70px;
+  }
+
+  .settings-brand-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 15px;
+  }
+
+  .settings-nav-item {
+    min-height: 42px;
+  }
+
+  .settings-nav-item i {
+    font-size: 13px;
+  }
+
+  .settings-main {
+    width: calc(100% - 58px);
+
+    margin-left: 58px;
+  }
+
+  .settings-header {
+    min-height: 105px;
+
+    padding: 18px 15px;
+
+    gap: 10px;
+  }
+
+  .settings-page-label {
+    font-size: 10px;
+  }
+
+  .settings-header h1 {
+    font-size: 22px;
+  }
+
+  .settings-header-description {
+    font-size: 11px;
+
+    max-width: 250px;
+  }
+
+  .settings-header-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    font-size: 16px;
+  }
+
+  .settings-content {
+    padding: 16px 14px 35px;
+  }
+
+  .settings-panel {
+    border-radius: 12px;
+
+    margin-bottom: 16px;
+  }
+
+  .settings-panel-header {
+    padding: 16px;
+
+    min-height: 75px;
+  }
+
+  .settings-panel-header h2 {
+    font-size: 14px;
+  }
+
+  .settings-panel-header p {
+    font-size: 10px;
+  }
+
+  .settings-panel-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    font-size: 13px;
+  }
+
+  .settings-form {
+    padding: 18px 16px;
+  }
+
+  .settings-form-actions {
+    margin-top: 18px;
+
+    justify-content: stretch;
+  }
+
+  .settings-primary-btn {
+    width: 100%;
+  }
+
+  .business-info-note {
+    font-size: 10px;
+  }
+
+  .security-warning {
+    padding: 11px 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .settings-sidebar {
+    width: 52px;
+  }
+
+  .settings-main {
+    width: calc(100% - 52px);
+
+    margin-left: 52px;
+  }
+
+  .settings-header {
+    padding: 16px 12px;
+  }
+
+  .settings-header h1 {
+    font-size: 20px;
+  }
+
+  .settings-header-icon {
+    display: none;
+  }
+
+  .settings-content {
+    padding: 13px 11px 30px;
+  }
+
+  .settings-panel-header {
+    padding: 14px;
+  }
+
+  .settings-form {
+    padding: 16px 14px;
+  }
+
+  .settings-input-wrapper input,
+  .settings-input-wrapper select {
+    height: 40px;
+
+    font-size: 11px;
+  }
+}

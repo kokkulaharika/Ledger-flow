@@ -5,6 +5,8 @@ import {
   loginUser,
   getProfile,
   ownerDashboard,
+  updateProfile,
+  changePassword,
 } from "../controllers/authcontroller.js";
 
 import authMiddleware from "../middleware/authMiddleware.js";
@@ -27,6 +29,14 @@ router.get(
   authMiddleware,
   authorizeRoles("owner"),
   ownerDashboard
+);
+
+router.put("/profile", authMiddleware, updateProfile);
+
+router.put(
+  "/change-password",
+  authMiddleware,
+  changePassword
 );
 
 export default router;

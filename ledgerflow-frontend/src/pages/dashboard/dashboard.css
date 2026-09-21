@@ -1,0 +1,2295 @@
+/* =========================================================
+   LEDGERFLOW DASHBOARD
+   Professional SaaS dashboard styling
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL DASHBOARD STYLES
+   ========================================================= */
+
+/* Make width and height calculations predictable. */
+.dashboard-page,
+.dashboard-page * {
+  box-sizing: border-box;
+}
+
+
+/* Main dashboard page. */
+.dashboard-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f7f8fc;
+  color: #172033;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+/* Main sidebar. */
+.dashboard-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid #e8ebf2;
+  z-index: 100;
+}
+
+
+/* LedgerFlow brand area. */
+.dashboard-brand {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 24px;
+  border-bottom: 1px solid #eef0f5;
+  color: #172033;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* Brand icon. */
+.dashboard-brand-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #172554;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+
+/* Navigation wrapper. */
+.dashboard-navigation {
+  flex: 1;
+  padding: 22px 14px;
+  overflow-y: auto;
+}
+
+
+/* Navigation item. */
+.dashboard-nav-item {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 5px;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #697386;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Navigation icons. */
+.dashboard-nav-item i {
+  width: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+
+/* Navigation hover state. */
+.dashboard-nav-item:hover {
+  background: #f2f4f9;
+  color: #172554;
+}
+
+
+/* Active dashboard navigation item. */
+.dashboard-nav-item.active {
+  background: #eef2ff;
+  color: #27347d;
+  font-weight: 600;
+}
+
+
+/* Sidebar bottom section. */
+.dashboard-sidebar-bottom {
+  padding: 15px 14px 20px;
+  border-top: 1px solid #eef0f5;
+}
+
+
+/* Logout item. */
+.dashboard-nav-item.logout-item {
+  color: #737b8c;
+}
+
+
+/* Logout hover state. */
+.dashboard-nav-item.logout-item:hover {
+  background: #fff2f2;
+  color: #c0392b;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+/* Main dashboard content area. */
+.dashboard-main {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  margin-left: 250px;
+}
+
+
+/* Dashboard header. */
+.dashboard-header {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 25px 38px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+
+/* Header left section. */
+.dashboard-header-left {
+  min-width: 0;
+}
+
+
+/* Small overview label. */
+.dashboard-page-label {
+  margin: 0 0 5px;
+  color: #68738a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+/* Dashboard greeting. */
+.dashboard-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+/* Highlighted user name. */
+.dashboard-header h1 span {
+  color: #30418f;
+}
+
+
+/* Header description. */
+.dashboard-header-description {
+  margin: 5px 0 0;
+  color: #7b8495;
+  font-size: 13px;
+}
+
+
+/* Header right section. */
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+
+/* Notification button. */
+.dashboard-icon-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e8ef;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #68738a;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+/* Notification hover state. */
+.dashboard-icon-button:hover {
+  border-color: #cdd3e2;
+  background: #f7f8fc;
+  color: #27347d;
+}
+
+
+/* User profile. */
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* User avatar. */
+.dashboard-user-avatar {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e9edff;
+  color: #27347d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* User information. */
+.dashboard-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+
+/* User name. */
+.dashboard-user-info strong {
+  color: #273044;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* Business name. */
+.dashboard-user-info span {
+  max-width: 160px;
+  overflow: hidden;
+  color: #8a92a2;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+   ========================================================= */
+
+/* Main content wrapper. */
+.dashboard-content {
+  padding: 32px 38px 45px;
+}
+
+
+/* Business overview header. */
+.dashboard-top-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+
+/* Business overview heading. */
+.dashboard-top-row h2 {
+  margin: 0;
+  color: #20293a;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+
+/* Business overview description. */
+.dashboard-top-row p {
+  margin: 5px 0 0;
+  color: #7d8697;
+  font-size: 13px;
+}
+
+
+/* Current date display. */
+.dashboard-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #e1e5ed;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #68738a;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+/* Date icon. */
+.dashboard-date i {
+  color: #4a5aa3;
+}
+
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+/* Statistics grid. */
+.dashboard-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+
+/* Individual statistic card. */
+.dashboard-stat-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e6e9f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 7px rgba(25, 35, 60, 0.025);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Statistic card hover. */
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(25, 35, 60, 0.07);
+}
+
+
+/* Top part of statistic card. */
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+
+/* Statistic icon. */
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef1ff;
+  color: #34469a;
+  font-size: 15px;
+}
+
+
+/* Statistic label. */
+.stat-label {
+  margin: 0 0 7px;
+  color: #737d90;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* Statistic number. */
+.dashboard-stat-card h3 {
+  margin: 0;
+  color: #1e2738;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+
+/* Statistic description. */
+.stat-description {
+  margin: 7px 0 0;
+  color: #9aa1af;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   PREMIUM FINANCIAL CHART
+   ========================================================= */
+
+/* Main financial analytics card. */
+.dashboard-chart-panel {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 24px 24px 20px;
+  overflow: hidden;
+  border: 1px solid #e7eaf1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(25, 35, 60, 0.045);
+}
+
+
+/* Decorative line at the top of the chart card. */
+.dashboard-chart-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #34469a;
+}
+
+
+/* Chart header. */
+.dashboard-chart-panel .dashboard-panel-header {
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+
+/* Chart title. */
+.dashboard-chart-panel .dashboard-panel-header h3 {
+  color: #182238;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+
+/* Chart subtitle. */
+.dashboard-chart-panel .dashboard-panel-header p {
+  margin-top: 5px;
+  color: #8a93a5;
+  font-size: 11px;
+}
+
+
+/* Chart header icon. */
+.dashboard-chart-panel .panel-header-icon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e4e8f4;
+  border-radius: 10px;
+  background: #f5f6fb;
+  color: #34469a;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CHART SUMMARY
+   ========================================================= */
+
+/* Financial summary row above the chart. */
+.chart-summary-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+
+/* Individual chart summary item. */
+.chart-summary-item {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  border: 1px solid #eef0f5;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+
+/* Summary colored indicator. */
+.chart-summary-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+
+/* Revenue indicator. */
+.revenue-dot {
+  background: #34469a;
+}
+
+
+/* Cost indicator. */
+.cost-dot {
+  background: #7583b9;
+}
+
+
+/* Expense indicator. */
+.expense-dot {
+  background: #9da6c7;
+}
+
+
+/* Summary text wrapper. */
+.chart-summary-item div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+/* Summary label. */
+.chart-summary-item span:not(.chart-summary-dot) {
+  overflow: hidden;
+  color: #8a93a5;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* Summary amount. */
+.chart-summary-item strong {
+  overflow: hidden;
+  color: #273044;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* Chart wrapper. */
+.dashboard-chart-container {
+  width: 100%;
+  height: 330px;
+  margin-top: 4px;
+}
+
+
+/* Remove chart focus outline. */
+.dashboard-chart-container svg:focus {
+  outline: none;
+}
+
+
+/* Cleaner chart text. */
+.dashboard-chart-container .recharts-cartesian-axis-tick-value {
+  fill: #8a93a5;
+  font-size: 11px;
+}
+
+
+/* Lighter Y-axis labels. */
+.dashboard-chart-container
+  .recharts-yAxis
+  .recharts-cartesian-axis-tick-value {
+  fill: #9aa2b1;
+}
+
+
+/* Hide chart axis lines. */
+.dashboard-chart-container .recharts-cartesian-axis-line {
+  stroke: transparent;
+}
+
+
+/* Hide chart tick lines. */
+.dashboard-chart-container .recharts-cartesian-axis-tick-line {
+  stroke: transparent;
+}
+
+
+/* Subtle horizontal grid. */
+.dashboard-chart-container
+  .recharts-cartesian-grid-horizontal
+  line {
+  stroke: #edf0f5;
+  stroke-width: 1;
+}
+
+
+/* Remove vertical grid lines. */
+.dashboard-chart-container
+  .recharts-cartesian-grid-vertical
+  line {
+  stroke: transparent;
+}
+
+
+/* Style chart bars. */
+.dashboard-chart-container .recharts-bar-rectangle path {
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+
+/* Slightly emphasize bars on hover. */
+.dashboard-chart-container
+  .recharts-bar-rectangle:hover
+  path {
+  filter: brightness(0.92);
+}
+
+
+/* =========================================================
+   CHART LEGEND
+   ========================================================= */
+
+/* Position legend neatly below the chart. */
+.dashboard-chart-container .recharts-default-legend {
+  padding-top: 8px !important;
+}
+
+
+/* Legend text. */
+.dashboard-chart-container .recharts-legend-item-text {
+  color: #697386 !important;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* Legend spacing. */
+.dashboard-chart-container .recharts-legend-item {
+  margin-right: 18px !important;
+}
+
+
+/* =========================================================
+   CUSTOM CHART TOOLTIP
+   ========================================================= */
+
+/* Tooltip wrapper. */
+.dashboard-chart-container .recharts-tooltip-wrapper {
+  outline: none;
+}
+
+
+/* Tooltip cursor. */
+.dashboard-chart-container .recharts-tooltip-cursor {
+  fill: rgba(52, 70, 154, 0.035);
+}
+
+
+/* Custom tooltip container. */
+.financial-custom-tooltip {
+  min-width: 145px;
+  padding: 12px 14px;
+  border: 1px solid #e3e6ee;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(25, 35, 60, 0.1);
+}
+
+
+/* Tooltip category. */
+.financial-tooltip-label {
+  margin: 0 0 5px;
+  color: #273044;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* Tooltip amount. */
+.financial-tooltip-value {
+  margin: 0;
+  color: #34469a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* Tooltip supporting text. */
+.financial-tooltip-caption {
+  display: block;
+  margin-top: 3px;
+  color: #9aa2b1;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   GENERAL PANEL STYLES
+   ========================================================= */
+
+/* Two-column dashboard panel layout. */
+.dashboard-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+
+/* Generic dashboard panel. */
+.dashboard-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e6e9f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 7px rgba(25, 35, 60, 0.025);
+}
+
+
+/* Panel header. */
+.dashboard-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* Panel title. */
+.dashboard-panel-header h3 {
+  margin: 0;
+  color: #20293a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* Panel description. */
+.dashboard-panel-header p {
+  margin: 4px 0 0;
+  color: #8991a1;
+  font-size: 11px;
+}
+
+
+/* Panel icon. */
+.panel-header-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f1f3fa;
+  color: #5362a4;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FINANCIAL SUMMARY
+   ========================================================= */
+
+/* Financial list. */
+.financial-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Financial row. */
+.financial-row {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+
+/* Remove last border. */
+.financial-row:last-child {
+  border-bottom: none;
+}
+
+
+/* Financial row label. */
+.financial-row-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #667084;
+  font-size: 12px;
+}
+
+
+/* Financial icon. */
+.financial-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #f4f5f9;
+  color: #6370a8;
+  font-size: 11px;
+}
+
+
+/* Financial amount. */
+.financial-row strong {
+  color: #273044;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* Highlighted profit row. */
+.financial-row.highlight-row {
+  margin: 5px -8px 0;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: #f5f7ff;
+}
+
+
+/* Profit amount. */
+.financial-row.highlight-row strong {
+  color: #34469a;
+}
+
+
+/* Loss row. */
+.financial-row.loss-row {
+  background: #fff8f8;
+}
+
+
+/* Loss amount. */
+.financial-row.loss-row strong {
+  color: #b55454;
+}
+
+
+/* =========================================================
+   INVENTORY
+   ========================================================= */
+
+/* Inventory metrics list. */
+.inventory-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* Inventory card. */
+.inventory-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #eef0f5;
+  border-radius: 9px;
+  background: #fafbfc;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Inventory card hover. */
+.inventory-card:hover {
+  border-color: #dfe3ed;
+  background: #f7f8fb;
+  transform: translateY(-1px);
+}
+
+
+/* Inventory icon. */
+.inventory-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #eef1ff;
+  color: #4d5da1;
+  font-size: 13px;
+}
+
+
+/* Inventory text container. */
+.inventory-card div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+/* Inventory label. */
+.inventory-card span {
+  color: #7c8596;
+  font-size: 11px;
+}
+
+
+/* Inventory value. */
+.inventory-card strong {
+  color: #273044;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* Inventory status box. */
+.inventory-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f7f8fc;
+}
+
+
+/* Inventory status icon. */
+.status-icon {
+  margin-top: 2px;
+  color: #5a9b76;
+  font-size: 14px;
+}
+
+
+/* Inventory status title. */
+.inventory-status strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #465064;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Inventory status description. */
+.inventory-status p {
+  margin: 0;
+  color: #8b93a2;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+/* Quick actions panel. */
+.quick-actions-panel {
+  margin-bottom: 0;
+}
+
+
+/* Quick action grid. */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+
+/* Quick action button. */
+.quick-action {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #e6e9f0;
+  border-radius: 9px;
+  background: #fafbfc;
+  color: #58637a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    all 0.2s ease;
+}
+
+
+/* Quick action icon. */
+.quick-action i {
+  color: #4b5da3;
+  font-size: 14px;
+}
+
+
+/* Quick action hover state. */
+.quick-action:hover {
+  border-color: #cfd5e5;
+  background: #f2f4fb;
+  color: #27347d;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+/* Dashboard loading screen. */
+.dashboard-loading {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f8fc;
+  color: #5362a4;
+}
+
+
+/* Loading icon. */
+.dashboard-loading i {
+  margin-bottom: 12px;
+  font-size: 25px;
+}
+
+
+/* Loading message. */
+.dashboard-loading p {
+  margin: 0;
+  color: #727c8e;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR STATE
+   ========================================================= */
+
+/* Dashboard error screen. */
+.dashboard-error {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #f7f8fc;
+  text-align: center;
+}
+
+
+/* Error icon. */
+.dashboard-error > i {
+  margin-bottom: 15px;
+  color: #c65a5a;
+  font-size: 35px;
+}
+
+
+/* Error heading. */
+.dashboard-error h2 {
+  margin: 0 0 8px;
+  color: #273044;
+  font-size: 20px;
+}
+
+
+/* Error message. */
+.dashboard-error p {
+  max-width: 450px;
+  margin: 0 0 20px;
+  color: #7d8697;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* Retry button. */
+.dashboard-retry-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #27347d;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+
+/* Retry button hover. */
+.dashboard-retry-btn:hover {
+  background: #1f2b69;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+/* Smaller desktop and tablet screens. */
+@media (max-width: 1200px) {
+  /* Reduce dashboard content spacing. */
+  .dashboard-content {
+    padding: 28px;
+  }
+
+  /* Reduce header spacing. */
+  .dashboard-header {
+    padding: 23px 28px;
+  }
+
+  /* Display two statistic cards per row. */
+  .dashboard-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Tablet layout. */
+@media (max-width: 900px) {
+  /* Make sidebar slightly smaller. */
+  .dashboard-sidebar {
+    width: 215px;
+  }
+
+  /* Adjust main area for smaller sidebar. */
+  .dashboard-main {
+    width: calc(100% - 215px);
+    margin-left: 215px;
+  }
+
+  /* Reduce brand padding. */
+  .dashboard-brand {
+    padding: 0 18px;
+  }
+
+  /* Stack financial and inventory panels. */
+  .dashboard-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Display quick actions in two columns. */
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reduce chart height slightly. */
+  .dashboard-chart-container {
+    height: 310px;
+  }
+}
+
+
+/* Mobile layout. */
+@media (max-width: 700px) {
+  /* Convert dashboard layout into a vertical layout. */
+  .dashboard-page {
+    display: block;
+  }
+
+  /* Make sidebar part of normal document flow. */
+  .dashboard-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e8ebf2;
+  }
+
+  /* Main dashboard becomes full width. */
+  .dashboard-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Smaller brand area. */
+  .dashboard-brand {
+    height: 65px;
+  }
+
+  /* Horizontal navigation on mobile. */
+  .dashboard-navigation {
+    display: flex;
+    gap: 5px;
+    padding: 10px 14px;
+    overflow-x: auto;
+  }
+
+  /* Mobile navigation item. */
+  .dashboard-nav-item {
+    width: auto;
+    min-width: max-content;
+    margin-bottom: 0;
+  }
+
+  /* Hide sidebar bottom section on mobile. */
+  .dashboard-sidebar-bottom {
+    display: none;
+  }
+
+  /* Stack header content. */
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Header actions take full width. */
+  .dashboard-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Reduce content padding. */
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  /* Stack overview title and date. */
+  .dashboard-top-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* One statistic card per row. */
+  .dashboard-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack chart summaries. */
+  .chart-summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce chart height. */
+  .dashboard-chart-container {
+    height: 285px;
+  }
+}
+
+
+/* Small mobile screens. */
+@media (max-width: 450px) {
+  /* Reduce dashboard spacing. */
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  /* Reduce panel padding. */
+  .dashboard-panel,
+  .dashboard-chart-panel {
+    padding: 17px;
+  }
+
+  /* Reduce statistic card padding. */
+  .dashboard-stat-card {
+    padding: 17px;
+  }
+
+  /* Stack quick actions vertically. */
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide business name on very small screens. */
+  .dashboard-user-info span {
+    display: none;
+  }
+
+  /* Reduce greeting size. */
+  .dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  /* Reduce chart height further. */
+  .dashboard-chart-container {
+    height: 260px;
+  }
+
+  /* Make chart summary more compact. */
+  .chart-summary-item {
+    padding: 9px 10px;
+  }
+}
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+/* Make the sidebar a vertical flex layout. */
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Allow ONLY the navigation/menu area to scroll. */
+.dashboard-navigation {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Keep the LedgerFlow logo fixed at the top. */
+.dashboard-brand {
+  flex-shrink: 0;
+}
+
+/* Keep Logout fixed at the bottom. */
+.dashboard-sidebar-bottom {
+  flex-shrink: 0;
+}
+
+/* -------------------------------
+   Scrollbar design
+   ------------------------------- */
+
+/* Chrome, Edge and Safari */
+.dashboard-navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Scrollbar background */
+.dashboard-navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scrollbar moving part */
+.dashboard-navigation::-webkit-scrollbar-thumb {
+  background: #d5d9e3;
+  border-radius: 10px;
+}
+
+/* Scrollbar when the mouse is over it */
+.dashboard-navigation::-webkit-scrollbar-thumb:hover {
+  background: #b9c0cf;
+}
+
+/* Firefox */
+.dashboard-navigation {
+  scrollbar-width: thin;
+  scrollbar-color: #d5d9e3 transparent;
+}
+
+/* =========================================================
+   DASHBOARD - FULL RESPONSIVE DESIGN
+========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .dashboard-main {
+    min-width: 0;
+    width: calc(100% - 240px);
+  }
+
+  .dashboard-content {
+    padding: 24px;
+  }
+
+  .dashboard-header {
+    padding: 22px 24px;
+  }
+
+  .dashboard-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .dashboard-section-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .dashboard-chart-panel {
+    width: 100%;
+  }
+
+  .dashboard-chart-container {
+    min-height: 340px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .dashboard-sidebar {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 210px);
+  }
+
+  .dashboard-header {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .dashboard-header-left h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-header-description {
+    font-size: 13px;
+  }
+
+  .dashboard-user-info {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .dashboard-top-row {
+    gap: 15px;
+  }
+
+  .dashboard-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-chart-container {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .chart-summary-row {
+    gap: 12px;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE - ICON ONLY VERTICAL SIDEBAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* -------------------------------------------------------
+     PAGE LAYOUT
+  ------------------------------------------------------- */
+
+  .dashboard-page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE SIDEBAR
+  ------------------------------------------------------- */
+
+  .dashboard-sidebar {
+    width: 64px;
+    min-width: 64px;
+    max-width: 64px;
+
+    height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     BRAND - ICON ONLY
+  ------------------------------------------------------- */
+
+  .dashboard-brand {
+    width: 100%;
+    height: 70px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .dashboard-brand span {
+    display: none;
+  }
+
+  .dashboard-brand-icon {
+    width: 38px;
+    height: 38px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* -------------------------------------------------------
+     NAVIGATION - VERTICAL
+  ------------------------------------------------------- */
+
+  .dashboard-navigation {
+    width: 100%;
+
+    padding: 12px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4px;
+  }
+
+
+  /* -------------------------------------------------------
+     NAVIGATION ITEMS - ICON ONLY
+  ------------------------------------------------------- */
+
+  .dashboard-nav-item {
+    width: 48px;
+    height: 48px;
+
+    margin: 0;
+    padding: 0;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    border-radius: 10px;
+  }
+
+
+  /* Hide Dashboard / Products / Sales text */
+  .dashboard-nav-item span {
+    display: none;
+  }
+
+
+  /* Keep icons */
+  .dashboard-nav-item i {
+    width: auto;
+    margin: 0;
+
+    font-size: 18px;
+
+    display: block;
+  }
+
+
+  /* Active navigation item */
+  .dashboard-nav-item.active {
+    width: 48px;
+  }
+
+
+  /* -------------------------------------------------------
+     SIDEBAR BOTTOM / LOGOUT
+  ------------------------------------------------------- */
+
+  .dashboard-sidebar-bottom {
+    margin-top: auto;
+
+    padding: 12px 8px;
+
+    display: flex;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .dashboard-sidebar-bottom .dashboard-nav-item {
+    width: 48px;
+    height: 44px;
+  }
+
+
+  /* Logout text hidden */
+  .dashboard-sidebar-bottom span {
+    display: none;
+  }
+
+  .dashboard-sidebar-bottom i {
+    margin: 0;
+    font-size: 17px;
+  }
+
+
+  /* -------------------------------------------------------
+     MAIN CONTENT
+  ------------------------------------------------------- */
+
+  .dashboard-main {
+    width: calc(100% - 64px);
+    min-width: 0;
+    flex: 1;
+
+    overflow-x: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  .dashboard-header {
+    padding: 18px 15px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .dashboard-header-left {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .dashboard-page-label {
+    font-size: 11px;
+  }
+
+  .dashboard-header-left h1 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .dashboard-header-description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+
+  /* Hide detailed user info */
+  .dashboard-user-info {
+    display: none;
+  }
+
+  .dashboard-user {
+    gap: 0;
+  }
+
+  .dashboard-user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .dashboard-header-actions {
+    gap: 8px;
+  }
+
+  .dashboard-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT
+  ------------------------------------------------------- */
+
+  .dashboard-content {
+    padding: 16px 15px 30px;
+  }
+
+
+  /* -------------------------------------------------------
+     TOP ROW
+  ------------------------------------------------------- */
+
+  .dashboard-top-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+  }
+
+  .dashboard-top-row h2 {
+    font-size: 19px;
+  }
+
+  .dashboard-top-row p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .dashboard-date {
+    width: fit-content;
+    font-size: 11px;
+  }
+
+
+  /* -------------------------------------------------------
+     STATISTICS
+  ------------------------------------------------------- */
+
+  .dashboard-stat-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    width: 100%;
+  }
+
+  .dashboard-stat-card {
+    min-width: 0;
+    padding: 15px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .stat-icon i {
+    font-size: 15px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .dashboard-stat-card h3 {
+    font-size: 19px;
+  }
+
+  .stat-description {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+
+  /* -------------------------------------------------------
+     FINANCIAL CHART
+  ------------------------------------------------------- */
+
+  .dashboard-chart-panel {
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px;
+  }
+
+  .dashboard-panel-header {
+    gap: 10px;
+  }
+
+  .dashboard-panel-header h3 {
+    font-size: 17px;
+  }
+
+  .dashboard-panel-header p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .panel-header-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+  }
+
+  .panel-header-icon i {
+    font-size: 14px;
+  }
+
+
+  /* Financial summary above chart */
+  .chart-summary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin: 16px 0;
+  }
+
+  .chart-summary-item {
+    min-width: 0;
+  }
+
+  .chart-summary-item span {
+    font-size: 10px;
+  }
+
+  .chart-summary-item strong {
+    font-size: 12px;
+  }
+
+
+  /* Chart */
+  .dashboard-chart-container {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+  }
+
+
+  /* -------------------------------------------------------
+     FINANCIAL + INVENTORY
+  ------------------------------------------------------- */
+
+  .dashboard-section-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    width: 100%;
+  }
+
+  .dashboard-panel {
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px;
+  }
+
+
+  /* Financial rows */
+  .financial-row {
+    padding: 12px 0;
+  }
+
+  .financial-row-label {
+    min-width: 0;
+  }
+
+  .financial-row-label span {
+    font-size: 12px;
+  }
+
+  .financial-row > strong {
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .financial-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .financial-icon i {
+    font-size: 12px;
+  }
+
+
+  /* -------------------------------------------------------
+     INVENTORY
+  ------------------------------------------------------- */
+
+  .inventory-summary {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .inventory-card {
+    padding: 12px;
+  }
+
+  .inventory-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inventory-card span {
+    font-size: 11px;
+  }
+
+  .inventory-card strong {
+    font-size: 18px;
+  }
+
+  .inventory-status {
+    padding: 12px;
+  }
+
+  .inventory-status strong {
+    font-size: 12px;
+  }
+
+  .inventory-status p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+
+  /* -------------------------------------------------------
+     QUICK ACTIONS
+  ------------------------------------------------------- */
+
+  .quick-actions-panel {
+    width: 100%;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .quick-action {
+    min-height: 72px;
+
+    padding: 12px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+  }
+
+  .quick-action i {
+    font-size: 16px;
+  }
+
+  .quick-action span {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE - 360px / 390px
+========================================================= */
+
+@media (max-width: 450px) {
+
+  /* -------------------------------------------------------
+     SIDEBAR
+  ------------------------------------------------------- */
+
+  .dashboard-sidebar {
+    width: 58px;
+    min-width: 58px;
+    max-width: 58px;
+  }
+
+  .dashboard-brand {
+    height: 64px;
+  }
+
+  .dashboard-brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dashboard-navigation {
+    padding: 10px 5px;
+    gap: 3px;
+  }
+
+  .dashboard-nav-item {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 9px;
+  }
+
+  .dashboard-nav-item.active {
+    width: 44px;
+  }
+
+  .dashboard-nav-item i {
+    font-size: 17px;
+  }
+
+  .dashboard-sidebar-bottom {
+    padding: 10px 5px;
+  }
+
+  .dashboard-sidebar-bottom .dashboard-nav-item {
+    width: 44px;
+    height: 42px;
+  }
+
+
+  /* -------------------------------------------------------
+     MAIN
+  ------------------------------------------------------- */
+
+  .dashboard-main {
+    width: calc(100% - 58px);
+  }
+
+  .dashboard-content {
+    padding: 14px 10px 25px;
+  }
+
+  .dashboard-header {
+    padding: 15px 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  .dashboard-header-left h1 {
+    font-size: 19px;
+  }
+
+  .dashboard-header-description {
+    font-size: 11px;
+  }
+
+  .dashboard-page-label {
+    font-size: 10px;
+  }
+
+  .dashboard-user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboard-icon-button {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  /* -------------------------------------------------------
+     STAT CARDS
+  ------------------------------------------------------- */
+
+  .dashboard-stat-grid {
+    gap: 9px;
+  }
+
+  .dashboard-stat-card {
+    padding: 12px;
+  }
+
+  .stat-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .stat-icon i {
+    font-size: 14px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .dashboard-stat-card h3 {
+    font-size: 17px;
+  }
+
+  .stat-description {
+    font-size: 9px;
+  }
+
+
+  /* -------------------------------------------------------
+     CHART
+  ------------------------------------------------------- */
+
+  .dashboard-chart-panel {
+    padding: 13px;
+  }
+
+  .dashboard-panel-header h3 {
+    font-size: 16px;
+  }
+
+  .dashboard-panel-header p {
+    font-size: 10px;
+  }
+
+  .chart-summary-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .chart-summary-item {
+    padding: 7px 0;
+  }
+
+  .dashboard-chart-container {
+    height: 270px;
+    min-height: 270px;
+  }
+
+
+  /* -------------------------------------------------------
+     PANELS
+  ------------------------------------------------------- */
+
+  .dashboard-panel {
+    padding: 13px;
+  }
+
+  .dashboard-panel-header {
+    margin-bottom: 10px;
+  }
+
+  .financial-row {
+    padding: 10px 0;
+  }
+
+  .financial-row-label span {
+    font-size: 11px;
+  }
+
+  .financial-row > strong {
+    font-size: 11px;
+  }
+
+  .financial-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+
+  /* -------------------------------------------------------
+     INVENTORY
+  ------------------------------------------------------- */
+
+  .inventory-card {
+    padding: 10px;
+  }
+
+  .inventory-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .inventory-card span {
+    font-size: 10px;
+  }
+
+  .inventory-card strong {
+    font-size: 17px;
+  }
+
+
+  /* -------------------------------------------------------
+     QUICK ACTIONS
+  ------------------------------------------------------- */
+
+  .quick-actions-grid {
+    gap: 8px;
+  }
+
+  .quick-action {
+    min-height: 65px;
+    padding: 9px 5px;
+  }
+
+  .quick-action i {
+    font-size: 14px;
+  }
+
+  .quick-action span {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+.dashboard-page,
+.dashboard-main,
+.dashboard-content,
+.dashboard-chart-panel,
+.dashboard-panel {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-page {
+  overflow-x: hidden;
+}
+
+.dashboard-main {
+  overflow-x: hidden;
+}
+
+.dashboard-chart-container {
+  max-width: 100%;
+}
